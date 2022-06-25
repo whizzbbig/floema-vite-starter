@@ -1,4 +1,4 @@
-# Lothus Boilerplate
+# Floema
 
 ```sh
 ├── /dist/                        # Production directory (minified, optimized and compiled files)
