@@ -6,27 +6,14 @@
           </svg>
         </a>
 
-        <!-- USE IF PRISMIC IS ENABLED -->
-        <!-- <ul class="menu__list">
+        <ul class="menu__list">
             {{#each navigation.data.list}}
                 <li class="menu__item">
-                    <a href="{{prismicLink list_link}}" class="menu__link">
-                        {{list_text}}
+                    <a href="{{prismicLink link}}" class="menu__link">
+                        {{text}}
                     </a>
                 </li>
             {{/each}}
-        </ul> -->
-
-        <!-- Using static for lab without Prismic -->
-        <ul class="menu__list">
-            <li class="menu__item">
-                <a href="/about/" class="menu__link">
-                    About
-                </a>
-                <a href="/lothus/" class="menu__link">
-                    Lothus
-                </a>
-            </li>
         </ul>
 
     </div>

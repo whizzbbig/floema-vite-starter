@@ -16,27 +16,26 @@
     <meta name="description" content="{{meta.data.description}}" />
 
     <meta property="og:url" content="https://bizar.ro/" />
-    <meta property="og:title" content="Lothus Boilerplate" />
+    <meta property="og:title" content="{{meta.data.title}}" />
     <meta property="og:image" content="" />
-    <meta property="og:description" content="A boilerplate for Lothus projects." />
+    <meta property="og:description" content="{{meta.data.description}}" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Lothus Boilerplate" />
-    <meta name="twitter:description" content="A boilerplate for Lothus projects." />
+    <meta name="twitter:title" content="{{meta.data.title}}" />
+    <meta name="twitter:description" content="{{meta.data.description}}" />
     <meta name="twitter:image:src" content="{{meta.data.image.url}}" />
 
-    <title>Lothus boilerplate</title>
+    <title>Floema</title>
   </head>
   <body>
-    {{> navigation/menu }}
 
-    {{> components/cursor }}
+    {{> components/preloader }}
+
+    {{> navigation/menu }}
 
     <div class="app" data-template="{{ template }}">
       {{> @partial-block }}
     </div>
-
-    {{> navigation/footer }}
 
     <script type="module" src="{{resolve-from-root '../app/main.js'}}"></script>
   </body>

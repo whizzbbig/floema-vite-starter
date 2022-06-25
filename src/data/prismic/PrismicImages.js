@@ -58,7 +58,7 @@ export default class {
     const promises = images.map(async image => {
       const url = image.replace('?auto=compress,format', '');
       const file = url
-        .replace('https://images.prismic.io/strangers-only/', '')
+        .replace('https://images.prismic.io/floema-ice/', '')
         .replace(/\+/g, '-');
       const path = `${DIRECTORY_ORIGINAL}/${file}`;
 

@@ -1,11 +1,15 @@
 {{#>layout template='about'}}
     <div class="about">
         <div class="about__wrapper">
-            <div class="about__header">
-                <h1 class="about__title">
-                    About page
-                </h1>
-            </div>
+            <section class="about__gallery">
+                <div class="about__gallery__wrapper">
+                    {{#each about.data.gallery}}
+                        <figure class="about__gallery__media">
+                            <img data-src="{{image.url}}" alt="{{image.alt}}" class="about__gallery__media__image">
+                        </figure>
+                    {{/each}}
+                </div>
+            </section>
         </div>
     </div>
 {{/layout}}

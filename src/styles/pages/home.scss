@@ -1,8 +1,7 @@
 @use "../utils/" as *;
 
 .home {
-  height: calc(100vh - 13rem * 2);
-  padding: 0 8rem;
+    height: 100vh;
 }
 
 .home__wrapper {
@@ -12,20 +11,4 @@
 
 .home__content {
   height: 100%;
-}
-
-.home__intro {
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
-
-.home__intro__title {
-  font-size: 7.8rem;
-  position: absolute;
-  text-transform: uppercase;
-  top: 50%;
-  transform: translateY(-50%);
-
 }

@@ -46,8 +46,4 @@ $font-the-pretender: 'The Pretender';
 $font-ed-sonar-regular: 'ed_sonarregular';
 $font-coronard-regular: 'coronardregular';
 
-$z-indexes: (
-  'canvas',
-  'app',
-  'cursor',
-);
+$z-indexes: ( 'preloader', 'navigation', 'canvas', 'app', 'cursor', );

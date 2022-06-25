@@ -1,17 +1,14 @@
 {{#>layout template='home'}}
 <div class="home">
     <div class="home__wrapper">
-        <div class="home__content">
-            <section class="home__intro">
-                <h1 class="home__intro__title">
-                    Lothus
-                </h1>
-            </section>
-            <section class="home__highlight">
-                <h2 class="home__highlight__title">
-
-                </h2>
-            </section>
+        <div class="home__gallery">
+            <div class="home__gallery__wrapper">
+                {{#each home.data.gallery}}
+                    <figure class="home__gallery__wrapper__media">
+                        <img data-src="{{image.url}}" alt="{{image.alt}}" class="home__gallery__wrapper__media__image">
+                    </figure>
+                {{/each}}
+            </div>
         </div>
     </div>
 </div>

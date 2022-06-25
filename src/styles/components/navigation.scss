@@ -1,14 +1,14 @@
 @use "../utils/" as *;
 
 .menu {
-  padding: 0 8rem;
+    position: fixed;
+    z-index: z('navigation');
+    width: 100%;
 }
 
 .menu__wrapper {
   align-items: center;
-  border-bottom: 1px solid $color-black;
   display: flex;
-  height: 13rem;
   justify-content: space-between;
   width: 100%;
 }

@@ -1,26 +1,27 @@
 import Component from './Component';
 
-import map from 'lodash/map';
-
-// import Title from '../animations/Title';
-// import Paragraph from '../animations/Paragraph';
-// import Label from '../animations/Label';
-
 export default class Page extends Component {
-  constructor({ element, elements }) {
+  constructor({ classes, element, elements }) {
     super({
       autoMount: false,
+      classes,
       element,
       elements: {
         ...elements,
         images: 'img',
-        // animationsParagraph: '[data-animation="paragraph"]',
-        // animationsTitle: '[data-animation="title"]',
-        // animationsLabel: '[data-animation="label"]',
       },
     });
   }
 
+  create() {
+    super.create();
+
+    this.components = [];
+  }
+
+  /**
+   * Animations.
+   */
   beforeShow() {
     if (this.elements.images) {
       if (!this.elements.images.length) {
@@ -33,50 +34,12 @@ export default class Page extends Component {
     }
   }
 
-  //   createAnimations() {
-  //     this.animations = [];
-
-  //     // Title
-
-  //     this.animationsTitle = map(this.elements.animationsTitle, element => {
-  //       return new Title({
-  //         element,
-  //       });
-  //     });
-
-  //     this.animations.push(...this.animationsTitle);
-
-  //     // Paragraphs
-
-  //     this.animationsParagraph = map(
-  //       this.elements.animationsParagraph,
-  //       element => {
-  //         return new Paragraph({
-  //           element,
-  //         });
-  //       }
-  //     );
-
-  //     this.animations.push(...this.animationsParagraph);
-
-  //     // Label
-
-  //     this.animationsLabel = map(this.elements.animationsLabel, element => {
-  //       return new Label({
-  //         element,
-  //       });
-  //     });
-
-  //     this.animations.push(...this.animationsLabel);
-  //   }
-
   show(animation) {
     this.beforeShow();
-    // this.createAnimations();
 
     return new Promise(async resolve => {
       if (animation) {
-        await animation;
+        await animation.play();
       } else {
         console.warn(`Page doesn't have animation in set.`);
       }
@@ -96,7 +59,7 @@ export default class Page extends Component {
 
     return new Promise(async resolve => {
       if (animation) {
-        await animation;
+        await animation.play();
       } else {
         console.warn(`Page doesn't have animation out set.`);
       }
@@ -108,4 +71,30 @@ export default class Page extends Component {
   }
 
   afterHide() {}
+
+  /**
+   * Events.
+   */
+  onMouseDown(event) {
+    this.components.forEach(component => component.onMouseDown?.(event));
+  }
+
+  onMouseMove(event) {
+    this.components.forEach(component => component.onMouseMove?.(event));
+  }
+
+  onMouseUp(event) {
+    this.components.forEach(component => component.onMouseUp?.(event));
+  }
+
+  onResize(event) {
+    this.components.forEach(component => component.onResize?.(event));
+  }
+
+  /**
+   * Loop.
+   */
+  update() {
+    this.components.forEach(component => component.update?.());
+  }
 }

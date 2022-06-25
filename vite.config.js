@@ -20,8 +20,8 @@ export default async ({ mode }) => {
   };
 
   // Prismic
-  // const prismic = new Prismic()
-  // const results = await prismic.getData()
+  const prismic = new Prismic();
+  const results = await prismic.getData();
 
   // SVG Sprite
   const spriteHelper = new SpriteHelper('src/sprites');
@@ -31,7 +31,6 @@ export default async ({ mode }) => {
   const input = {
     main: resolve('src/pages/index.html'),
     about: resolve('src/pages/about/index.html'),
-    lothus: resolve('src/pages/lothus/index.html'),
   };
 
   // Dynamic Router
@@ -51,8 +50,7 @@ export default async ({ mode }) => {
       handlebars({
         context() {
           return {
-            // ENABLE WHEN USING PRISMIC
-            // {...results}
+            ...results,
           };
         },
         helpers: handlebarsHelpers,
