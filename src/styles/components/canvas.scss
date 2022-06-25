@@ -1,0 +1,9 @@
+@use "../utils/" as *;
+
+.canvas {
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  z-index: z('canvas');
+}

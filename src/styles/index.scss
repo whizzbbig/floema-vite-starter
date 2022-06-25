@@ -1,0 +1,13 @@
+@use "./base/reset";
+@use "./base/base";
+@use "./base/fonts";
+
+@use './components/canvas';
+@use './components/preloader';
+@use './components/cursor';
+@use './components/navigation';
+@use './components/footer';
+
+@use './pages/home';
+@use './pages/about';
+@use './pages/lothus';

@@ -1,0 +1,17 @@
+@use "../utils/" as *;
+
+html {
+  font-family: $font-helvetica-neue;
+  font-size: calc(100vw / 1920 * 10);
+  overflow: hidden;
+
+  @include media('<=phone') {
+    font-size: calc(100vw / 375 * 10);
+  }
+}
+
+.app {
+  position: relative;
+  z-index: z('app');
+  z-index: 1;
+}
